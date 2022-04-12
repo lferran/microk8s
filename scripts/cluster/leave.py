@@ -373,7 +373,11 @@ def delete_dqlite_node(delete_node, dqlite_ep):
                 exit(2)
 
 
-@click.command()
+@click.command(
+    context_settings=dict(
+        help_option_names=["-h", "--help"],
+    )
+)
 def leave():
     """
     The node will depart from the cluster it is in.
